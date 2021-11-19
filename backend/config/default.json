@@ -1,0 +1,6 @@
+{
+  "jwtPrivateKey": "unsecureKey",
+  "port": "3900",
+  "requiresAuth": true,
+  "dbEndpoint": "http://localhost:9090/"
+}
