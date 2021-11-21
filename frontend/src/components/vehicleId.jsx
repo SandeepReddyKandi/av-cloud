@@ -14,7 +14,7 @@ class VehicleId extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Vehicle License Plate</h1>
+        <h1>Vehicle License Plate </h1>
         <div
           className="dropdown-divider"
           style={{
