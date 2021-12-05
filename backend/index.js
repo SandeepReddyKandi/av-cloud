@@ -4,6 +4,7 @@ const config = require("config");
 const user = require("./routes/users");
 const auth = require("./routes/auth");
 const av = require("./routes/av");
+const sensorInfoRouter = require("./routes/sensor-info");
 const socketRoute = require("./routes/socket");
 
 const express = require("express");
@@ -17,9 +18,8 @@ if (!config.get("jwtPrivateKey")) {
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb+srv://root:root@cluster0.kglve.mongodb.net/cluster0?retryWrites=true&w=majority", {
-            
-            
+  .connect("mongodb+srv://root:root@cluster0.kglve.mongodb.net/sensor_frame_data", {
+
     // retry to connect 
     reconnectTries: 1,
     // wait 5 seconds before retry
@@ -36,6 +36,7 @@ console.log("In Index app.use()");
 app.use("/api/user", user);
 app.use("/api/auth", auth);
 app.use("/api/av", av);
+app.use("/api/sensor-info", sensorInfoRouter);
 app.use("/api/socket", socketRoute);
 
 const httpServer = require("http").createServer(app);

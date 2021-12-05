@@ -2,7 +2,7 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const express = require("express");
 const router = express.Router();
-const Joi = require("Joi");
+const Joi = require("joi");
 // const Joi = require("../node_modules/joi");
 
 const { User } = require("../models/user");
