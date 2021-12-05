@@ -1,15 +1,29 @@
 .register-container {
   display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: center;
   .register-content {
     max-width: 40rem;
     min-width: 40rem;
     padding: 2rem;
-    height: 100%;
+    background: whitesmoke;
+    box-shadow: 3px 9px 11px 1px #273438;
+    .text-center {
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+    .button-cont {
+      margin-top: 2.5rem;
+    }
   }
   .register-background {
     flex: 1;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    z-index: -1;
     .background {
       position: absolute;
       width: 100%;

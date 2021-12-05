@@ -23,6 +23,42 @@ code {
 }
 
 main.main-container {
+  position: relative;
   display: flex;
   flex: 1;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group label {
+  width: 25%;
+  text-transform: uppercase;
+}
+
+.alert.alert-danger {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+.d-flx {
+  display: flex;
+}
+
+.flx-1 {
+  flex: 1;
+}
+.ant-checkbox-inner::after {
+  left: 25.5%!important;
+}
+
+.ant-checkbox-inner {
+  width: 26px!important;
+  height: 26px!important;
+}
+
+.btn.btn-info {
+  padding: 0.7rem 5rem;
+  text-transform: uppercase;
 }

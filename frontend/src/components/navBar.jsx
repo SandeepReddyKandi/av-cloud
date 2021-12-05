@@ -2,18 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import auth from "../services/authService";
 import ListItemNavBar from "./common/listItemNavBar";
-import "../styles/navbar.css";
+import "../styles/navbar.scss";
 
 const NavBar = () => {
   const user = auth.getCurrentUser();
 
   return (
-    <div
-      className="navbar navbar-dark flex-md-nowrap p-10 shadow navbar-expand-md bg-info"
-      // style={{ backgroundColor: "#6930c3" }}
-    >
+    <div id='navbar' className="navbar navbar-dark flex-md-nowrap p-10 shadow navbar-expand-md bg-info">
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to="/">
-        AVCloud
+        AV-Cloud
       </Link>
       <button
         className="navbar-toggler"

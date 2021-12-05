@@ -39,6 +39,9 @@ class Register extends Form {
     if (!user) {
       return (
         <div className='register-container'>
+          <div className='register-background'>
+            <div className='background'/>
+          </div>
           <div className='register-content'>
            <div className='form-container'>
              <h1 className="text-center">Register</h1>
@@ -47,12 +50,11 @@ class Register extends Form {
                {this.renderInput("username", "Username")}
                {this.renderInput("password", "Password", "password")}
                {this.renderCheckbox("isadmin", "Is Admin")}
-               {this.renderButton("Register")}
+               <div className='button-cont d-flx justify-content-center'>
+                 {this.renderButton("Register")}
+               </div>
              </form>
            </div>
-          </div>
-          <div className='register-background'>
-            <div className='background'></div>
           </div>
         </div>
       );

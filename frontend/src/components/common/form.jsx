@@ -60,7 +60,7 @@ class Form extends Component {
     return (
       <button
         disabled={this.validate()}
-        className="btn  btn-info"
+        className="btn btn-info"
         onClick={onClick}
       >
         {label}
@@ -102,10 +102,11 @@ class Form extends Component {
 
   renderCheckbox = (name, label) => {
     return (
-        <div className="form-check">
-          <label className="form-check-label">
-            <Checkbox onChange={(e) => this.handleCheckboxChange({name, value: e.target.checked.toString()})}>{label}</Checkbox>
-          </label>
+        <div className="form-group d-flx">
+          <label htmlFor={name}>{label}</label>
+          <div className="form-check-label flx-1">
+            <Checkbox onChange={(e) => this.handleCheckboxChange({name, value: e.target.checked.toString()})}/>
+          </div>
         </div>
     );
   };
