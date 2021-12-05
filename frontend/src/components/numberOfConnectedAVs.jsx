@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import withCardView from "./common/withCardView";
-import { getAVCount } from "../services/avService";
+import React, {Component} from "react";
+import {getAVCount} from "../services/avService";
 
 class NumberOfConnectedAVs extends Component {
   state = {};
@@ -11,22 +10,15 @@ class NumberOfConnectedAVs extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        <h1> Number Of Connected AVs</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginBottom: "30px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-          {this.state.avCount}
-        </p>
-      </React.Fragment>
-    );
+      return (
+          <div className='info-card'>
+              <div className='label'>Number Of Connected AVs</div>
+              <div className='value'>
+                  {this.state.avCount}
+              </div>
+          </div>
+      );
   }
 }
 
-export default withCardView(NumberOfConnectedAVs);
+export default NumberOfConnectedAVs;

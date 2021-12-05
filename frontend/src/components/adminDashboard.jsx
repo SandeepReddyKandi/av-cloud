@@ -2,53 +2,28 @@ import React, { Component } from "react";
 import NumberOfAVUsers from "./numberOfAVUsers";
 import NumberOfConnectedAVs from "./numberOfConnectedAVs";
 import ConnectedAVDetails from "./connectedAVDetails";
-import StatesOfConnectedAVs from "./statesOfConnectedAVs";
+import '../styles/admin-dashboard.scss';
+import '../styles/info-card.scss';
 
 class AdminDashboard extends Component {
-  state = {};
-  render() {
-    return (
-      <React.Fragment>
-        <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          AdminDashboard
-        </h1>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-auto">
-            <NumberOfAVUsers
-              style={{
-                margin: "30px 10px",
-                float: "left",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></NumberOfAVUsers>
-          </div>
-          <div className="col-auto">
-            <NumberOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                float: "right",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></NumberOfConnectedAVs>
-          </div>
-        </div>
-        <ConnectedAVDetails></ConnectedAVDetails>
-        {/* <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <StatesOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-            ></StatesOfConnectedAVs>
-          </div>
-        </div> */}
-      </React.Fragment>
-    );
-  }
+    state = {};
+    render() {
+        return (
+            <div className='admin-container'>
+                <div className='admin-heading'>
+                    <h1 className="text-center" style={{ marginBottom: "25px" }}>
+                        Admin Dashboard
+                    </h1>
+                </div>
+                <div className='admin-content-container'>
+                    <NumberOfAVUsers />
+                    <NumberOfConnectedAVs/>
+                    <ConnectedAVDetails/>
+                </div>
+                <div/>
+            </div>
+        );
+    }
 }
 
 export default AdminDashboard;

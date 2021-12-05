@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {getLatestInfo} from "../services/sensorInfoService";
 import '../styles/sensor-info.scss';
+import '../styles/info-card.scss';
 
 // import { io } from "socket.io-client";
 // const socket = io("http://localhost:3900", {

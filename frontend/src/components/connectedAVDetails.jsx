@@ -84,32 +84,36 @@ class ConnectedAVDetails extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <StatesOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-              data={this.state.avStatusDistributionData}
-            ></StatesOfConnectedAVs>
+        <>
+          <div className='h100'>
+            <div className='d-flx h100'>
+              <div className='flx-1'>
+                <StatesOfConnectedAVs
+                    style={{
+                      margin: "30px 10px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                    }}
+                    data={this.state.avStatusDistributionData}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="row" style={{ margin: "0px" }}>
-          <div className="col-12">
-            <ListOfConnectedAVs
-              style={{
-                margin: "30px 10px",
-                paddingLeft: "20px",
-                paddingRight: "20px",
-              }}
-              data={this.state.avStatusList}
-            ></ListOfConnectedAVs>
+          <div className='h100'>
+            <div className='d-flx h100'>
+              <div className='flx-1'>
+                <ListOfConnectedAVs
+                    style={{
+                      margin: "30px 10px",
+                      paddingLeft: "20px",
+                      paddingRight: "20px",
+                    }}
+                    data={this.state.avStatusList}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </React.Fragment>
+        </>
     );
   }
 }

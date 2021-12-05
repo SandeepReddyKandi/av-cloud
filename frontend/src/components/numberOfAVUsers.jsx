@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import withCardView from "./common/withCardView";
-import { getUserCount } from "../services/userService";
+import React, {Component} from "react";
+import {getUserCount} from "../services/userService";
 
 class NumberOfAVUsers extends Component {
   state = {};
@@ -12,21 +11,14 @@ class NumberOfAVUsers extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1> Number Of AV Users</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginBottom: "30px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
+      <div className='info-card'>
+        <div className='label'> Number Of AV Users</div>
+        <div className='value'>
           {this.state.userCount}
-        </p>
-      </React.Fragment>
+        </div>
+      </div>
     );
   }
 }
 
-export default withCardView(NumberOfAVUsers);
+export default NumberOfAVUsers;
