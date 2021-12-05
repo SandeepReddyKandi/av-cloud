@@ -48,8 +48,8 @@ class App extends Component {
               component={AddVehicle}
             ></UserRoute>
             <UserRoute path="/myVehicles" component={VehicleList}></UserRoute>
-            <Route path="/sensorinfo" component={SensorInfo}></Route>
-            <Route path="/myRides" component={MyRides}></Route>
+            <UserRoute path="/sensorinfo" component={SensorInfo}></UserRoute>
+            <UserRoute path="/myRides" component={MyRides}></UserRoute>
             <UserRoute
               path="/deleteVehicle"
               component={DeleteVehicle}

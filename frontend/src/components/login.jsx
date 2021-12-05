@@ -3,6 +3,7 @@ import auth from "../services/authService";
 import Joi from "joi-browser";
 import Form from "./common/form";
 import { Redirect } from "react-router";
+import "../styles/register.scss";
 
 class LoginForm extends Form {
   state = {
@@ -36,14 +37,23 @@ class LoginForm extends Form {
     if (!user) {
       console.log("DID NOT GET USER");
       return (
-        <div>
-          <h1 className="text-center">Login</h1>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password", "password")}
-            {this.renderButton("Login")}
-          </form>
+      <div className='register-container'>
+        <div className='register-background'>
+          <div className='background'/>
         </div>
+        <div className='register-content'>
+          <div className='form-container'>
+            <h1 className="text-center">Login</h1>
+            <form onSubmit={this.handleSubmit}>
+              {this.renderInput("username", "Username")}
+              {this.renderInput("password", "Password", "password")}
+              <div className='button-cont d-flx justify-content-center'>
+                {this.renderButton("Login")}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       );
     } else {
       console.log("GOT USER");

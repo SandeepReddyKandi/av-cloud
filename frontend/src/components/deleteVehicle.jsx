@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import auth from "../services/authService";
 import Joi from "joi-browser";
 import Form from "./common/form";
-import { Redirect } from "react-router";
-import { getVehicles } from "../services/userService";
-import { deleteVehicle } from "../services/userService";
+import {deleteVehicle} from "../services/userService";
+import '../styles/vehicle-form.scss';
 
 const user = auth.getCurrentUser();
 
@@ -60,23 +59,20 @@ class DeleteVehicle extends Form {
     // const user = auth.getCurrentUser();
 
     return(
-        <React.Fragment>
-        <div>
-             <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          Delete a Vehicle</h1>
+        <div className='vehicle-form-container'>
+            <div className='vehicle-content'>
+                <div className='form-container'>
+                    <h1 className="text-center"> Delete a Vehicle</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        {this.renderInput("vId", "VID")}                            {this.renderInput("password", "Password", "password")}
+                        <div className='button-cont d-flx justify-content-center'>
+                            {this.renderButton("Submit")}
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div>
-            <form onSubmit={this.handleSubmit}>
-                {this.renderInput("vId", "VID")}
-                {this.renderButton("Submit")}
-            </form>
-        </div>
-
-
-        </React.Fragment>
-        );
-       
-    }
+    )}
 }
 
 export default DeleteVehicle;

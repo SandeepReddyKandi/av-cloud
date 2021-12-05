@@ -26,7 +26,6 @@ main.main-container {
   position: relative;
   display: flex;
   flex: 1;
-  background-color: whitesmoke;
 }
 
 .form-group {
@@ -50,6 +49,11 @@ main.main-container {
 .flx-1 {
   flex: 1;
 }
+
+.jc-bet {
+  justify-content: space-between;
+}
+
 .ant-checkbox-inner::after {
   left: 25.5%!important;
 }

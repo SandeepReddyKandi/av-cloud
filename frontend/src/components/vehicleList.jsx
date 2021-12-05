@@ -5,6 +5,11 @@ import auth from "../services/authService";
 import { getVehicles } from "../services/userService";
 import Table from "./common/table";
 import { getSubscriptionData } from "../services/userService";
+import VehicleId from "./vehicleId";
+import CurrentState from "./currentState";
+import ServiceState from "./serviceStatus";
+import CurrentLocation from "./currentLocation";
+import RoadService from "./roadService";
 
 const user = auth.getCurrentUser();
 // let user1 = user.name.slice(0,1).toUpperCase() + user.name.slice(1,user.name.length);
@@ -63,37 +68,26 @@ class VehicleList extends Component {
         const {vehicles} = this.state;
         // console.log(y);
         return (
-            
-            <div className="container" style={{marginLeft: "-130px"}}>
-                <div>
-                    <h1 className="text-center" style={{ marginBottom: "25px", marginLeft: "300px"}}>
-                        {user1 + "'s Vehicles"}</h1>
+
+            <div className='user-container'>
+                <div className='user-heading'>
+                    <h1 className="text-center">
+                        {user1}'s Vehicles
+                    </h1>
                 </div>
-                <div> 
-                    <Link style={{marginRight: "20px"}}
-                        className="btn btn-info"
-                        to={{
-                            pathname: "/myVehicles/addVehicle",
-                        }}
-                    >Add Vehicle</Link>
-                    <Link style={{marginRight: "20px"}}
-                        className="btn btn-info"
-                        to={{
-                            pathname: "/mySchedule",
-                        }}
-                    >Schedule Ride</Link>
-                      <Link 
-                        className="btn btn-info"
-                        to={{
-                            pathname: "/deleteVehicle",
-                        }}
-                    >Delete Vehicle</Link>
-                    
+                <div className='link-container d-flx jc-bet'>
+                    <Link className="btn btn-info" to={{pathname: "/myVehicles/addVehicle",}}>
+                        Add Vehicle
+                    </Link>
+                    <Link className="btn btn-info" to={{pathname: "/mySchedule",}}>
+                        Schedule Ride
+                    </Link>
+                    <Link className="btn btn-info" to={{pathname: "/deleteVehicle",}}>
+                        Delete Vehicle
+                    </Link>
                 </div>
-                
-                <p></p>
                 <div>
-                    <Table data={vehicles} columns={this.columns} keyAtt="vId" ></Table>
+                    <Table data={vehicles} columns={this.columns} keyAtt="vId" />
                 </div>
             </div>
         );

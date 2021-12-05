@@ -103,7 +103,7 @@ class UserDashboard extends Component {
     return (
       <div className='user-container'>
           <div className='user-heading'>
-              <h1 className="text-center" style={{ marginBottom: "25px" }}>
+              <h1 className="text-center">
                   {user1}'s Dashboard
               </h1>
           </div>
