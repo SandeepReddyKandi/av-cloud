@@ -42,22 +42,19 @@ class MyRides extends Component {
         const {rides} = this.state;
         // console.log(y);
         return (
-            
-            <React.Fragment>
-                <div>
+            <div className='user-container'>
+                <div className='user-heading'>
                     <h1 className="text-center" style={{ marginBottom: "25px" }}>
-                        {user1 + "'s Ride History"}</h1>
+                        {user1}'s Ride History
+                    </h1>
                 </div>
-                <Link
-                    className="btn btn-info"
-                    to={{
-                        pathname: "/mySchedule",
-                    }}
-                >Schedule a Ride</Link>
-                <p></p>
-                <Table data={rides} columns={this.columns} keyAtt="vdatetime" ></Table>
-                
-            </React.Fragment>
+                <div className='link-container'>
+                    <Link className="btn btn-info" to={{pathname: "/mySchedule",}}>
+                        Schedule a Ride
+                    </Link>
+                </div>
+                <Table data={rides} columns={this.columns} keyAtt="vdatetime" />
+            </div>
         );
     }
 }
