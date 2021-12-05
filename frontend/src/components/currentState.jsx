@@ -1,11 +1,4 @@
-import React, { Component } from "react";
-import withCardView from "./common/withCardView";
-import Table from "./common/table";
-
-import { getJwt } from "../services/authService";
-import { getAvStates } from "../services/avService";
-
-import _ from "lodash";
+import React, {Component} from "react";
 
 // import { io } from "socket.io-client";
 // const socket = io("http://localhost:3900", {
@@ -76,27 +69,14 @@ class CurrentState extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Current State</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginTop: "5px",
-            marginBottom: "5px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-        {this.props.data}
-        </p>
-        {!this.props.data && (
-           <p className="text-center" style={{ fontSize: "50px" }}>
-           Idle
-           </p>
-        )}
-      </React.Fragment>
+      <div className='info-card'>
+        <div className='label'>Current State</div>
+        <div className='value'>
+            {this.props.data || 'Idle'}
+        </div>
+      </div>
     );
   }
 }
 
-export default withCardView(CurrentState);
+export default CurrentState;

@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-import withCardView from "./common/withCardView";
-import Table from "./common/table";
-import _ from "lodash";
+import React, {Component} from "react";
 
 class VehicleId extends Component {
     state = { vid: "N/A",
@@ -13,27 +10,14 @@ class VehicleId extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Vehicle License Plate </h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginTop: "5px",
-            marginBottom: "5px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-        {this.props.data}
-        </p>
-        {!this.props.data && this.props.data.length === 0 && (
-           <p className="text-center" style={{ fontSize: "50px" }}>
-           {this.state.vid}
-           </p>
-        )}
-      </React.Fragment>
+      <div className='info-card'>
+        <div className='label'>Vehicle License Plate </div>
+        <div className='value'>
+            {this.props.data || this.state.vid}
+        </div>
+      </div>
     );
   }
 }
 
-export default withCardView(VehicleId);
+export default VehicleId;

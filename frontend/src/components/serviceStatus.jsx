@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { getVehicles } from "../services/userService";
-import withCardView from "./common/withCardView";
+import React, {Component} from "react";
 // import { getUserCount } from "../services/userService";
-import { getSubscriptionData } from "../services/userService";
+import {getSubscriptionData} from "../services/userService";
 
 class ServiceState extends Component {
   state = {service: "Inactive"};
@@ -20,28 +18,15 @@ class ServiceState extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
-        <h1>Service Status</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginTop: "5px",
-            marginBottom: "5px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-          {this.props.data}
-        </p>
-        {!this.props.data  && (
-           <p className="text-center" style={{ fontSize: "50px" }}>
-            {this.state.service}
-           </p>
-        )}
-      </React.Fragment>
-    );
+      return (
+          <div className='info-card'>
+              <div className='label'>Service Status</div>
+              <div className='label'>
+                  {this.props.data || this.state.service}
+              </div>
+          </div>
+      );
   }
 }
 
-export default withCardView(ServiceState);
+export default ServiceState;

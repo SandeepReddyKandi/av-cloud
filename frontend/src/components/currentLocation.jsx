@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import withCardView from "./common/withCardView";
+import React, {Component} from "react";
+
 // import { getUserCount } from "../services/userService";
 
 class CurrentLocation extends Component {
@@ -12,27 +12,14 @@ class CurrentLocation extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Current Location</h1>
-        <div
-          className="dropdown-divider"
-          style={{
-            marginTop: "5px",
-            marginBottom: "5px",
-            borderBlockColor: "#BEE5F0",
-          }}
-        ></div>
-        <p className="text-center" style={{ fontSize: "50px" }}>
-          {this.props.data}
-        </p>
-        {!this.props.data && (
-           <p className="text-center" style={{ fontSize: "50px" }}>
-           Unknown
-           </p>
-        )}
-      </React.Fragment>
+      <div className='info-card'>
+        <div className='label'>Current Location</div>
+        <div className='value'>
+          {this.props.data || 'Unknown'}
+        </div>
+      </div>
     );
   }
 }
 
-export default withCardView(CurrentLocation);
+export default CurrentLocation;

@@ -7,6 +7,7 @@ import VehicleId from "./vehicleId";
 import auth from "../services/authService";
 import { Link } from "react-router-dom";
 import { socket } from "../App";
+import '../styles/user-dashboard.scss';
 
 // import { getJwt } from "../services/authService";
 import { getAvStates } from "../services/avService";
@@ -100,39 +101,26 @@ class UserDashboard extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          {user1 + "'s"} Dashboard
-        </h1>
-        <Link
-          className="btn btn-info"
-          to={{
-            pathname: "/sensorinfo",
-          }}
-        >
-          Additional Sensor Info
-        </Link>
-        <VehicleId
-          style={{ marginTop: "30px" }}
-          data={this.state.vid}
-        ></VehicleId>
-        <CurrentState
-          style={{ marginTop: "30px" }}
-          data={this.state.currentState}
-        ></CurrentState>
-        <ServiceState
-          style={{ marginTop: "35px" }}
-          data={this.state.serviceState}
-        ></ServiceState>
-        <CurrentLocation
-          style={{ marginTop: "35px" }}
-          data={this.state.currentLocation}
-        ></CurrentLocation>
-        <RoadService
-          style={{ marginTop: "35px" }}
-          data={this.state.roadService}
-        ></RoadService>
-      </React.Fragment>
+      <div className='user-container'>
+          <div className='user-heading'>
+              <h1 className="text-center" style={{ marginBottom: "25px" }}>
+                  {user1}'s Dashboard
+              </h1>
+          </div>
+          <div className='link-container'>
+              <Link className="btn btn-info" to={{pathname: "/sensorinfo",}}>
+                  Additional Sensor Info
+              </Link>
+          </div>
+          <div className='user-content-container'>
+              <VehicleId data={this.state.vid}/>
+              <CurrentState data={this.state.currentState}/>
+              <ServiceState data={this.state.serviceState}/>
+              <CurrentLocation data={this.state.currentLocation}/>
+              <RoadService data={this.state.roadService}/>
+          </div>
+
+      </div>
     );
   }
 }
