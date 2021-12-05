@@ -4,6 +4,7 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import { Redirect } from "react-router";
 import { register } from "../services/userService";
+import '../styles/register.scss';
 
 class Register extends Form {
   state = {
@@ -37,15 +38,22 @@ class Register extends Form {
 
     if (!user) {
       return (
-        <div>
-          <h1 className="text-center">Register</h1>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderInput("name", "Name")}
-            {this.renderInput("username", "Username")}
-            {this.renderInput("password", "Password", "password")}
-            {this.renderCheckbox("isadmin", "Is Admin")}
-            {this.renderButton("Register")}
-          </form>
+        <div className='register-container'>
+          <div className='register-content'>
+           <div className='form-container'>
+             <h1 className="text-center">Register</h1>
+             <form onSubmit={this.handleSubmit}>
+               {this.renderInput("name", "Name")}
+               {this.renderInput("username", "Username")}
+               {this.renderInput("password", "Password", "password")}
+               {this.renderCheckbox("isadmin", "Is Admin")}
+               {this.renderButton("Register")}
+             </form>
+           </div>
+          </div>
+          <div className='register-background'>
+            <div className='background'></div>
+          </div>
         </div>
       );
     } else {

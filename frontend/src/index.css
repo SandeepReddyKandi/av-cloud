@@ -15,3 +15,14 @@ code {
 [role="main"] {
   padding-top: 60px; /* Space for fixed navbar */
 }
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.main-container {
+  display: flex;
+  flex: 1;
+}

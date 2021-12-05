@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <NavBar></NavBar>
-        <main className="container" style={{ paddingTop: "80px" }}>
+        <main className='main-container'>
           <Switch>
             <Route path="/login" component={Login}></Route>
             <Route path="/logout" component={Logout}></Route>

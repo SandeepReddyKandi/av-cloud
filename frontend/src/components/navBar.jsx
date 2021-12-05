@@ -8,8 +8,8 @@ const NavBar = () => {
   const user = auth.getCurrentUser();
 
   return (
-    <nav
-      className="navbar navbar-dark fixed-top flex-md-nowrap p-10 shadow navbar-expand-md bg-info"
+    <div
+      className="navbar navbar-dark flex-md-nowrap p-10 shadow navbar-expand-md bg-info"
       // style={{ backgroundColor: "#6930c3" }}
     >
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to="/">
@@ -102,7 +102,7 @@ const NavBar = () => {
           )}
         </ul>
       </div>
-    </nav>
+    </div>
   );
 };
 
