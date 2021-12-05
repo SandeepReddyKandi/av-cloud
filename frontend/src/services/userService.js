@@ -8,6 +8,7 @@ export function register(user) {
     email: user.username,
     password: user.password,
     name: user.name,
+    isadmin: user.isadmin,
   });
 }
 

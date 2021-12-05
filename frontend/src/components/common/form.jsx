@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Input from "./input";
-// import Select from "./select";
+import {Checkbox} from "antd";
 import Joi from "joi-browser";
 
 class Form extends Component {
@@ -47,6 +47,15 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
+  handleCheckboxChange = ({name, value}) => {
+    const errors = { ...this.state.errors };
+    const errorMessage = this.validateProperty({name, value});
+    if (errorMessage) errors[name] = errorMessage;
+    else delete errors[name];    const data = { ...this.state.data };
+    data[name] = value;
+    this.setState({ data, errors });
+  }
+
   renderButton = (label, onClick) => {
     return (
       <button
@@ -76,35 +85,30 @@ class Form extends Component {
 
   renderRadioOptions = (name, label, type) => {
     return (
-      <div className="form-check">
-        <label className="form-check-label">
-          <input
-            className="form-check-input"
-            type={type}
-            value={label}
-            onChange={this.handleChange}
-            name={name}
-          ></input>
-          {label}
-        </label>
-      </div>
+        <div className="form-check">
+          <label className="form-check-label">
+            <input
+                className="form-check-input"
+                type={type}
+                value={label}
+                onChange={this.handleChange}
+                name={name}
+            ></input>
+            {label}
+          </label>
+        </div>
+    );
+  }
+
+  renderCheckbox = (name, label) => {
+    return (
+        <div className="form-check">
+          <label className="form-check-label">
+            <Checkbox onChange={(e) => this.handleCheckboxChange({name, value: e.target.checked.toString()})}>{label}</Checkbox>
+          </label>
+        </div>
     );
   };
-
-  // renderSelect = (name, label, options) => {
-  //   const { data, errors } = this.state;
-
-  //   return (
-  //     <Select
-  //       name={name}
-  //       value={data[name]}
-  //       label={label}
-  //       options={options}
-  //       onChange={this.handleChange}
-  //       error={errors[name]}
-  //     ></Select>
-  //   );
-  // };
 }
 
 export default Form;

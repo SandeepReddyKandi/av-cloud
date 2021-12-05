@@ -7,7 +7,7 @@ import { register } from "../services/userService";
 
 class Register extends Form {
   state = {
-    data: { name: "", username: "", password: "" },
+    data: { name: "", username: "", password: "", isadmin: "false" },
     errors: {},
   };
 
@@ -15,6 +15,7 @@ class Register extends Form {
     name: Joi.string().required().min(5).max(15).label("Name"),
     username: Joi.string().required().min(5).max(50).email().label("Username"),
     password: Joi.string().required().min(8).max(20).label("Password"),
+    isadmin: Joi.string(),
   };
 
   doSubmit = async () => {
@@ -42,6 +43,7 @@ class Register extends Form {
             {this.renderInput("name", "Name")}
             {this.renderInput("username", "Username")}
             {this.renderInput("password", "Password", "password")}
+            {this.renderCheckbox("isadmin", "Is Admin")}
             {this.renderButton("Register")}
           </form>
         </div>
