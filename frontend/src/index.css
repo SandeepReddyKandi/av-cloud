@@ -26,6 +26,7 @@ main.main-container {
   position: relative;
   display: flex;
   flex: 1;
+  background-color: whitesmoke;
 }
 
 .form-group {

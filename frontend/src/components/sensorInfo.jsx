@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import withCardView from "./common/withCardView";
 import {getLatestInfo} from "../services/sensorInfoService";
+import '../styles/sensor-info.scss';
 
 // import { io } from "socket.io-client";
 // const socket = io("http://localhost:3900", {
@@ -121,180 +121,59 @@ class SensorInfo extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <h1 className="text-center" style={{ marginBottom: "25px" }}>
-                    Additional Sensor Information
-                </h1>
-                <div
-                    className="dropdown-divider"
-                    style={{
-                        marginTop: "30px",
-                        marginBottom: "30px",
-                        borderBlockColor: "#BEE5F0",
-                    }}
-                ></div>
-                <h2
-                    style={{
-                        marginBottom: "50px",
-                        marginTop: "50px",
-                        marginLeft: "200px",
-                        textAlign: "left",
-                    }}>Vehicle : {this.state.vehicle}</h2>
-                <div
-                    className="dropdown-divider"
-                    style={{
-                        marginTop: "30px",
-                        marginBottom: "30px",
-                        borderBlockColor: "#BEE5F0",
-                    }}
-                ></div>
-                <h2
-                    style={{
-                        marginBottom: "50px",
-                        marginTop: "50px",
-                        marginLeft: "200px",
-                        textAlign: "left",
-                    }}>City : {this.state.city}</h2>
-                <div
-                    className="dropdown-divider"
-                    style={{
-                        marginTop: "30px",
-                        marginBottom: "30px",
-                        borderBlockColor: "#BEE5F0",
-                    }}
-                ></div>
-
-                <div
-                    class="sensor"
-                    style={{
-                        marginBottom: "50px",
-                        marginTop: "50px",
-                        textAlign: "left",
-                    }}
-                ><h2
-                    style={{
-                        marginBottom: "50px",
-                        marginTop: "50px",
-                        marginLeft: "200px",
-                    }}
-                >Speed: {this.state.speed}
-                </h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}
-                    >Simulation Time: {this.state.simulationTime}
-                    </h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>Heading: {this.state.heading}</h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>GNSS: {this.state.gnss}</h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>Map: {this.state.map}</h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>Height: {this.state.height}</h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>Location: {this.state.location}</h2>
-                    <div
-                        className="dropdown-divider"
-                        style={{
-                            marginTop: "30px",
-                            marginBottom: "30px",
-                            borderBlockColor: "#BEE5F0",
-                        }}
-                    ></div>
-                    <h2
-                        style={{
-                            marginBottom: "50px",
-                            marginTop: "50px",
-                            marginLeft: "200px",
-                            textAlign: "left",
-                        }}>Client: {this.state.client}</h2>
+            <div className='sensor-info-container'>
+                <div className='sensor-info-heading'>
+                    <h1>
+                        Additional Sensor Information
+                    </h1>
                 </div>
-
-
-                {/* <Table data={this.state.data} columns={this.columns} keyAtt="headlight" ></Table> */}
-            </React.Fragment>
+                <div className='sensor-info-content-container'>
+                    <div className='info-card'>
+                        <div className='label'>Vehicle</div>
+                        <div className='value'> {this.state.vehicle}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>City</div>
+                        <div className='value'> {this.state.city}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Speed</div>
+                        <div className='value'> {this.state.speed}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Simulation Time</div>
+                        <div className='value'> {this.state.simulationTime}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Heading</div>
+                        <div className='value'> {this.state.heading}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>GNSS</div>
+                        <div className='value'> {this.state.gnss}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Map</div>
+                        <div className='value'> {this.state.map}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Height</div>
+                        <div className='value'> {this.state.height}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Location</div>
+                        <div className='value'> {this.state.location}</div>
+                    </div>
+                    <div className='info-card'>
+                        <div className='label'>Client</div>
+                        <div className='value'> {this.state.client}</div>
+                    </div>
+                </div>
+            </div>
         );
     }
 }
 
 //export default SensorInfo;
 
-export default withCardView(SensorInfo);
+export default SensorInfo;
