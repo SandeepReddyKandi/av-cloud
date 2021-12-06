@@ -54,7 +54,6 @@ class User {
       email: email,
       userpassword: password,
     });
-    console.log("result", result.data);
     return data[0];
     // return "A"
     
