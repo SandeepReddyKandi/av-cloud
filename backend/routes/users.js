@@ -177,13 +177,13 @@ router.post("/", async (req, res) => {
   // console.log("IF USER EXISTS: ", user, " Leng: ", user.length);
   if (user) return res.status(400).send("Email already exists");
 
-  const { name, email, password } = req.body;
+  const { name, email, password,isadmin: isAdmin} = req.body;
 
   //   user = new User(_.pick(req.body, ["name", "email", "password"]));
   const salt = await bcrypt.genSalt(10);
   const encPassword = await bcrypt.hash(password, salt);
 
-  user = await User.addNew(name, email, encPassword);
+  user = await User.addNew(name, email, encPassword,isAdmin);
   // console.log("USER: ", userObj);
 
   const { isadmin } = user;

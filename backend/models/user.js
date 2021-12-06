@@ -47,12 +47,13 @@ class User {
     // });
   }
 
-  static async addNew(name, email, password) {
+  static async addNew(name, email, password,isadmin) {
     console.log("Inside AddNew")
     const { data } = await http.post(dbURL + "/add", {
       name: name,
       email: email,
       userpassword: password,
+      isadmin: isadmin
     });
     return data[0];
     // return "A"
