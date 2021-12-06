@@ -36,30 +36,30 @@ class App extends Component {
         <NavBar />
         <main className='main-container'>
           <Switch>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/logout" component={Logout}></Route>
-            <Route path="/register" component={Register}></Route>
-            <Route path="/myPlan/addPlan" component={AddPlan}></Route>
-            <Route path="/myPlan" component={MyPlan}></Route>
-            <Route path="/myStatus" component={UserDashboard}></Route>
-            <Route path="/mySchedule" component={ScheduleRide}></Route>
-            <Route
+            <Route path="/login" component={Login}/>
+            <Route path="/logout" component={Logout}/>
+            <Route path="/register" component={Register}/>
+            <UserRoute path="/myPlan/addPlan" component={AddPlan}/>
+            <UserRoute path="/myPlan" component={MyPlan}/>
+            <UserRoute path="/myStatus" component={UserDashboard}/>
+            <UserRoute path="/mySchedule" component={ScheduleRide}/>
+            <UserRoute
               path="/myVehicles/addVehicle"
               component={AddVehicle}
-            ></Route>
-            <Route path="/myVehicles" component={VehicleList}></Route>
-            <Route path="/sensorinfo" component={SensorInfo}></Route>
-            <Route path="/myRides" component={MyRides}></Route>
-            <Route
+            />
+            <UserRoute path="/myVehicles" component={VehicleList}/>
+            <UserRoute path="/sensorinfo" component={SensorInfo}/>
+            <UserRoute path="/myRides" component={MyRides}/>
+            <UserRoute
               path="/deleteVehicle"
               component={DeleteVehicle}
-            ></Route>
+            />
 
-            <Route
+            <AdminRoute
               path="/dashboard"
               component={AdminDashboard}
-            ></Route>
-            <Redirect from="/" exact to="/login"></Redirect>
+            />
+            <Redirect from="/" exact to="/login"/>
           </Switch>
         </main>
       </React.Fragment>

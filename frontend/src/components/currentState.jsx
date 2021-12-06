@@ -72,7 +72,7 @@ class CurrentState extends Component {
       <div className='info-card'>
         <div className='label'>Current State</div>
         <div className='value'>
-            {this.props.data || 'Idle'}
+            {this.props.data}
         </div>
       </div>
     );

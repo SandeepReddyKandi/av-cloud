@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Form from "./common/form";
 import { addNewSubscription } from "../services/userService";
 import Joi from "joi-browser";
+import "../styles/add-plan.scss";
 
 class AddPlan extends Form {
   state = {
@@ -110,24 +111,29 @@ class AddPlan extends Form {
 
   render() {
     return (
-      <React.Fragment>
-        <h1> Add Plan</h1>
-
-        <p style={{ fontSize: "25px", marginTop: "50px" }}>
-          <strong>Cycle: </strong> {this.state.startDate} - {this.state.endDate}
-        </p>
-        <p style={{ fontSize: "25px", marginTop: "30px" }}>
-          <strong>Amount: </strong> $20
-        </p>
-        <form onSubmit={this.handleSubmit} style={{ fontSize: "20px" }}>
-          <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            {this.renderRadioOptions("paymentType", "Credit Card", "radio")}
-            {this.renderRadioOptions("paymentType", "Debit Card", "radio")}
-            {this.renderRadioOptions("paymentType", "PayPal", "radio")}
+        <div className='add-plan-form-container'>
+          <div className='add-plan-content'>
+            <div className='form-container'>
+              <h1 className="text-center">Add Plan</h1>
+              <p style={{fontSize: "25px", marginTop: "30px"}}>
+                <strong>Cycle: </strong> {this.state.startDate} - {this.state.endDate}
+              </p>
+              <p style={{fontSize: "25px", marginTop: "30px"}}>
+                <strong>Amount: </strong> $20
+              </p>
+              <form onSubmit={this.handleSubmit}>
+                <div className='d-flx jc-bet' style={{fontSize: "18px", marginTop: "30px"}}>
+                  {this.renderRadioOptions("paymentType", "Credit Card", "radio")}
+                  {this.renderRadioOptions("paymentType", "Debit Card", "radio")}
+                  {this.renderRadioOptions("paymentType", "PayPal", "radio")}
+                </div>
+                <div className='button-cont d-flx justify-content-center'>
+                  {this.renderButton("Add Plan")}
+                </div>
+              </form>
+            </div>
           </div>
-          {this.renderButton("Add Plan")}
-        </form>
-      </React.Fragment>
+        </div>
     );
   }
 }

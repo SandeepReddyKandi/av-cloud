@@ -114,8 +114,8 @@ class UserDashboard extends Component {
           </div>
           <div className='user-content-container'>
               <VehicleId data={this.state.vid}/>
-              <CurrentState data={this.state.currentState}/>
-              <ServiceState data={this.state.serviceState}/>
+              <CurrentState data={this.state.getV ? 'Moving': 'Idle'}/>
+              <ServiceState data={this.state.getV ? 'Active' : 'Inactive'}/>
               <CurrentLocation data={this.state.currentLocation}/>
               <RoadService data={this.state.roadService}/>
           </div>

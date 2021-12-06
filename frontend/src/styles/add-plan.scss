@@ -1,0 +1,20 @@
+.add-plan-form-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #fef7e5;
+  .add-plan-content {
+    max-width: 40rem;
+    min-width: 40rem;
+    padding: 2rem;
+    background: whitesmoke;
+    box-shadow: 3px 9px 11px 1px #273438;
+    .text-center {
+      margin-bottom: 3rem;
+    }
+    .button-cont {
+      margin-top: 2.5rem;
+    }
+  }
+}
