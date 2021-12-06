@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Hepta Slab', sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -79,4 +79,8 @@ main.main-container {
 
 .h100 .card {
   height: 100%;
+}
+
+.monte {
+  font-family: 'Montserrat', serif!important;
 }

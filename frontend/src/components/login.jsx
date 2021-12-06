@@ -19,9 +19,13 @@ class LoginForm extends Form {
   doSubmit = async () => {
     try {
       const { username, password } = this.state.data;
-      await auth.login(username, password);
+      const user = await auth.login(username, password);
       const { state } = this.props.location;
-      window.location = state ? state.from.pathname : "/";
+      if (state && state.from.pathname) {
+        window.location = state.from.pathname
+      } else {
+       window.location = user.isadmin ? '/dashboard' : 'myStatus';
+      }
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
@@ -63,7 +67,7 @@ class LoginForm extends Form {
             to={{
               pathname: "/dashboard",
             }}
-          ></Redirect>
+          />
         );
       } else {
         return (
@@ -71,7 +75,7 @@ class LoginForm extends Form {
             to={{
               pathname: "/myStatus",
             }}
-          ></Redirect>
+          />
         );
       }
     }

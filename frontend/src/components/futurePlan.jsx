@@ -20,7 +20,7 @@ class FuturePlan extends Component {
                   marginBottom: "30px",
                   borderBlockColor: "#BEE5F0",
                 }}
-              ></div>
+              />
               <p>
                 <strong>Future Cycle: </strong> {plan.startdate} -{" "}
                 {plan.enddate}
@@ -43,7 +43,7 @@ class FuturePlan extends Component {
                 marginBottom: "30px",
                 borderBlockColor: "#BEE5F0",
               }}
-            ></div>
+            />
             <p> No future plans at the moment</p>
           </React.Fragment>
         )}

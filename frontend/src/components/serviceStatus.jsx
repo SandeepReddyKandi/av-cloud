@@ -21,7 +21,7 @@ class ServiceState extends Component {
       return (
           <div className='info-card'>
               <div className='label'>Service Status</div>
-              <div className='label'>
+              <div className='value'>
                   {this.props.data || this.state.service}
               </div>
           </div>

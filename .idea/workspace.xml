@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1f74363-7125-43ca-ad97-e908182e1f62" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/add-vehicle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/add-vehicle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/navBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/navBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/authService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/navbar.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +91,7 @@
       <workItem from="1638211700019" duration="1817000" />
       <workItem from="1638248802604" duration="1583000" />
       <workItem from="1638643480087" duration="23649000" />
-      <workItem from="1638807355634" duration="5841000" />
+      <workItem from="1638807355634" duration="7903000" />
     </task>
     <servers />
   </component>

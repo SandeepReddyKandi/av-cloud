@@ -5,12 +5,12 @@ import ListItemNavBar from "./common/listItemNavBar";
 import "../styles/navbar.scss";
 
 const NavBar = () => {
-  const user = auth.getCurrentUser();
+  const user = auth.getCurrentUser() || {};
 
   return (
     <div id='navbar' className="navbar navbar-dark bg-dark flex-md-nowrap p-10 shadow navbar-expand-md bg-info">
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to="/">
-        AV-Cloud
+        AV-CLOUD
       </Link>
       <button
         className="navbar-toggler"
