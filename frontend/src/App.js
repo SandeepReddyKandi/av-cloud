@@ -33,27 +33,27 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar></NavBar>
+        <NavBar />
         <main className='main-container'>
           <Switch>
             <Route path="/login" component={Login}></Route>
             <Route path="/logout" component={Logout}></Route>
             <Route path="/register" component={Register}></Route>
-            <UserRoute path="/myPlan/addPlan" component={AddPlan}></UserRoute>
-            <UserRoute path="/myPlan" component={MyPlan}></UserRoute>
+            <Route path="/myPlan/addPlan" component={AddPlan}></Route>
+            <Route path="/myPlan" component={MyPlan}></Route>
             <Route path="/myStatus" component={UserDashboard}></Route>
             <Route path="/mySchedule" component={ScheduleRide}></Route>
-            <UserRoute
+            <Route
               path="/myVehicles/addVehicle"
               component={AddVehicle}
-            ></UserRoute>
-            <UserRoute path="/myVehicles" component={VehicleList}></UserRoute>
-            <UserRoute path="/sensorinfo" component={SensorInfo}></UserRoute>
-            <UserRoute path="/myRides" component={MyRides}></UserRoute>
-            <UserRoute
+            ></Route>
+            <Route path="/myVehicles" component={VehicleList}></Route>
+            <Route path="/sensorinfo" component={SensorInfo}></Route>
+            <Route path="/myRides" component={MyRides}></Route>
+            <Route
               path="/deleteVehicle"
               component={DeleteVehicle}
-            ></UserRoute>
+            ></Route>
 
             <Route
               path="/dashboard"

@@ -1,15 +1,16 @@
-.vehicle-form-container {
+.add-vehicle-form-container {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   background-color: #fef7e5;
-  .vehicle-content {
-    max-width: 40rem;
-    min-width: 40rem;
+  .add-vehicle-content {
+    max-width: 50rem;
+    min-width: 50rem;
     padding: 2rem;
     background: whitesmoke;
-    box-shadow: 3px 9px 11px 1px #273438;
+    box-shadow: 3px 9px 11px 1px #a59b96;
+    border: 2px solid;
     .text-center {
       margin-bottom: 3rem;
     }

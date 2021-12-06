@@ -1,11 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const ListItemNabBar = ({ iconClass, label, path }) => {
   iconClass = iconClass + " fa-navbar-icons";
   return (
     <li className="nav-item px-3 text-nowrap" style={{ padding: "5px 15px" }}>
-      <i className={iconClass} aria-hidden="true"></i>
+      {/*<i className={iconClass} aria-hidden="true"/>*/}
 
       <NavLink
         className="nav-link"

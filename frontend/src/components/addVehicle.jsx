@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import auth from "../services/authService";
 import Joi from "joi-browser";
 import Form from "./common/form";
-import { Redirect } from "react-router";
-import { addVehicle } from "../services/userService";
-import { getSubscriptionData } from "../services/userService";
+import {addVehicle, getSubscriptionData} from "../services/userService";
+import '../styles/add-vehicle.scss'
 
 const user = auth.getCurrentUser();
 
 class AddVehicle extends Form {
-    state = {
-    data: { vId: "", vColor: "", vMake: "", vModel: "", vMileage: "", vPspace: "", vLocation: "",},
+  state = {
+    data: {vId: "", vColor: "", vMake: "", vModel: "", vMileage: "", vPspace: "", vLocation: "",},
     errors: {},
   };
 
@@ -29,10 +28,12 @@ class AddVehicle extends Form {
   // adding
   doSubmit = async () => {
 
-    try{
+    try {
       console.log("Submitted");
-      const { vId, vColor, vMake, vModel, vMileage, vPspace, vCurrentStatus, vServiceStatus,
-        vLocation, vRoadService, } = this.state.data;
+      const {
+        vId, vColor, vMake, vModel, vMileage, vPspace, vCurrentStatus, vServiceStatus,
+        vLocation, vRoadService,
+      } = this.state.data;
       // const { paymentType } = this.state.data;
       const vehicleData = {
         vId,
@@ -47,13 +48,11 @@ class AddVehicle extends Form {
         vRoadService,
       };
       vehicleData.vCurrentStatus = "Idle";
-      const { data: planDetails } = await getSubscriptionData();
+      const {data: planDetails} = await getSubscriptionData();
       console.log("DATA: ", planDetails);
-      if (planDetails.current.length == 0)
-      {
+      if (planDetails.current.length == 0) {
         vehicleData.vServiceStatus = "Inactive";
-      }
-      else{
+      } else {
         vehicleData.vServiceStatus = "Active";
       }
       vehicleData.vRoadService = "No Service";
@@ -65,13 +64,12 @@ class AddVehicle extends Form {
 
       await addVehicle(vehicleData);
       this.props.history.push("/myVehicles");
-    }
-    catch (ex) {
+    } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         console.log("CAUGHT HERE");
         const errors = this.state.errors;
         errors.vId = ex.response.data;
-        this.setState({ errors });
+        this.setState({errors});
       }
     }
 
@@ -80,31 +78,28 @@ class AddVehicle extends Form {
 
   render() {
     // const user = auth.getCurrentUser();
-    return(
-        <React.Fragment>
-        <div>
-             <h1 className="text-center" style={{ marginBottom: "25px" }}>
-          Add a Vehicle</h1>
+    return (
+        <div className='add-vehicle-form-container'>
+          <div className='add-vehicle-content'>
+            <div className='form-container'>
+              <h1 className="text-center">Add a vehicle</h1>
+              <form onSubmit={this.handleSubmit}>
+                {this.renderInput("vId", "VID")}
+                {this.renderInput("vColor", "Vehicle Color")}
+                {this.renderInput("vMake", "Vehicle Make")}
+                {this.renderInput("vModel", "Vehicle Model")}
+                {this.renderInput("vMileage", "Vehicle Mileage")}
+                {this.renderInput("vPspace", "Vehicle Passengers Space")}
+                {this.renderInput("vLocation", "Vehicle Location (City)")}
+                <div className='button-cont d-flx justify-content-center'>
+                  {this.renderButton("Submit")}
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            {this.renderInput("vId", "VID")}
-            {this.renderInput("vColor", "Vehicle Color")}
-            {this.renderInput("vMake", "Vehicle Make")}
-            {this.renderInput("vModel", "Vehicle Model")}
-            {this.renderInput("vMileage", "Vehicle Mileage")}
-            {this.renderInput("vPspace", "Vehicle Passengers Space")}
-            {/* {this.renderInput("vServiceStatus", "Vehicle Service Status (Moving or Idle)")}
-            {this.renderInput("vCurrentStatus", "Vehicle Current Status (Active or Inactive)")} */}
-            {this.renderInput("vLocation", "Vehicle Location (City)")}
-            {/* {this.renderInput("vRoadService", "Vehicle Road Service (Service required or No Service)")} */}
-            {this.renderButton("Submit")}
-          </form>
-        </div>
-        </React.Fragment>
-        );
-       
-    }
+    )
+  }
 }
 
 export default AddVehicle;
