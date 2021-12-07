@@ -28,16 +28,11 @@ class DeleteVehicle extends Form {
         vId
       };
     
-      console.log(this.state.data);
-      console.log("Submitted1");
-      console.log(vehicleId);
-      console.log("Submitted2");
       await deleteVehicle(vehicleId);
       this.props.history.push("/myVehicles");
     }
     catch (ex) {
       if (ex.response && ex.response.status === 400) {
-        console.log("CAUGHT HERE");
         const errors = this.state.errors;
         errors.vId = ex.response.data;
         this.setState({ errors });
@@ -64,7 +59,7 @@ class DeleteVehicle extends Form {
                 <div className='form-container'>
                     <h1 className="text-center"> Delete a Vehicle</h1>
                     <form onSubmit={this.handleSubmit}>
-                        {this.renderInput("vId", "VID")}                            {this.renderInput("password", "Password", "password")}
+                        {this.renderInput("vId", "VID")}
                         <div className='button-cont d-flx justify-content-center'>
                             {this.renderButton("Submit")}
                         </div>

@@ -59,11 +59,7 @@ const NavBar = () => {
                 label="My Vehicles"
                 path="/myVehicles"
               />
-              <ListItemNavBar
-                iconClass="fa fa-list-alt"
-                label="Add a Vehicle"
-                path="/myVehicles/addVehicle"
-              />
+              
             </React.Fragment>
           )}
         </ul>

@@ -8,12 +8,6 @@ import { getAVStateAndCount, getListOfAVs } from "../services/avService";
 import { getJwt } from "../services/authService";
 import { socket } from "../App";
 
-// import { io } from "socket.io-client";
-// const socket = io("http://localhost:3900", {
-//   query: {
-//     jwtToken: getJwt(),
-//   },
-// });
 
 class ConnectedAVDetails extends Component {
   state = {
@@ -30,7 +24,6 @@ class ConnectedAVDetails extends Component {
   }
 
   async populateAVStatusAndCountData() {
-    console.log("In populate Count data");
     const { data: avStates } = await getAVStateAndCount();
     console.log("AV STATES: ", avStates);
     const avStatusDistributionData = [];
@@ -49,7 +42,7 @@ class ConnectedAVDetails extends Component {
 
   async populateAVStatusListData() {
     const { data: avStatusList } = await getListOfAVs();
-    console.log("LIST DATA: ", avStatusList);
+    //console.log("LIST DATA: ", avStatusList);
     this.setState({ avStatusList });
   }
 
