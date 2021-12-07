@@ -11,7 +11,7 @@ import '../styles/user-dashboard.scss';
 
 // import { getJwt } from "../services/authService";
 import { getAvStates } from "../services/avService";
-import { getVehicles } from "../services/userService";
+import {getRides, getVehicles} from "../services/userService";
 
 import _ from "lodash";
 
@@ -47,10 +47,10 @@ class UserDashboard extends Component {
     console.log("MADE IT PAS SOCKET");
 
     const { data: getV } = await getVehicles();
+    const { data: getR } = await getRides();
     this.setState({getV});
     console.log("THIS: ", getV);
-
-    
+    console.log("This: get Rides ", getR);
   }
 
   async populateAVStatusListData() {
@@ -114,8 +114,8 @@ class UserDashboard extends Component {
           </div>
           <div className='user-content-container'>
               <VehicleId data={this.state.vid}/>
-              <CurrentState data={this.state.getV ? 'Moving': 'Idle'}/>
-              <ServiceState data={this.state.getV ? 'Active' : 'Inactive'}/>
+              <CurrentState data={this.state.getV && this.state.getV.length ? 'Moving': 'Idle'}/>
+              <ServiceState data={this.state.getV && this.state.getV.length ? 'Active' : 'Inactive'}/>
               <CurrentLocation data={this.state.currentLocation}/>
               <RoadService data={this.state.roadService}/>
           </div>
