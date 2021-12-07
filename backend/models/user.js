@@ -13,12 +13,6 @@ const userArray = [
     password: "$2b$10$2nqIaxdFY9s57nrrMjEM2.5gD.KQ3NF7/wU7taPNAC.lVf7bZbbYS",
     isAdmin: true,
   },
-  // {
-  //   name: "Himaja",
-  //   email: "himaja.chandaluri@gmail.com",
-  //   password: "$2b$10$NP3F7.ZCmXTMAD7fL99jPuQCUTBogS6U5vzLrKyn4yE8x/h/nJ4bS",
-  //   isAdmin: false,
-  // },
   {
     name: "admin",
     email: "admin1@admin.com",
