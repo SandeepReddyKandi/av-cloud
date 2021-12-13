@@ -3,6 +3,8 @@ import { apiUrl } from "../config.json";
 
 const apiEndpoint = apiUrl + "/user";
 
+console.log("API URL :" + apiUrl);
+
 export function register(user) {
   return http.post(apiEndpoint, {
     email: user.username,
@@ -51,6 +53,7 @@ export function deleteVehicle(vehicleId) {
     vId: vehicleId.vId,
   });
 }
+
 
 export function getVehicles() {
   return http.get(apiEndpoint + "/myVehicles");

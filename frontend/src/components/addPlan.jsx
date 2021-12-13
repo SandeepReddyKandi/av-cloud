@@ -75,7 +75,7 @@ class AddPlan extends Form {
       endDate,
       paymentType,
       tag,
-      amount: 20,
+      amount: 35,
     };
     console.log("subscriptionData: ", subscriptionData);
     await addNewSubscription(subscriptionData);

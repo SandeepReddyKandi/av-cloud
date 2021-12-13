@@ -70,7 +70,7 @@ class VehicleList {
             vmodel: vehicle.vModel,
             vmileage: vehicle.vMileage,
             vpassengerspace: vehicle.vPspace,
-            vservicestatus: vehicle.vServiceStatus,
+            vservicestatus: 'active',
             vcurrentstatus: vehicle.vCurrentStatus,
             location: vehicle.vLocation,
             roadservice: vehicle.vRoadService,
